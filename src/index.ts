@@ -57,7 +57,7 @@ export const generateFirestoreData = async (
     databaseURL,
     credential
   });
-  const { keys, values } = generateJson({ schema, keyReducers, count });
+  const { keys, values } = await generateJson({ schema, keyReducers, count });
   const firestore = new Firestore();
   const settings = { timestampsInSnapshots: true };
   firestore.settings(settings);
